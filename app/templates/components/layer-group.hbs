@@ -1,0 +1,10 @@
+{{#if visible}}
+  {{#each config.layers key='layer.id' as |layerConfig|}}
+    {{map.layer
+      layer=layerConfig.layer
+      didUpdateLayers=didUpdateLayers
+      before=before}}
+  {{/each}}
+{{/if}}
+
+{{yield}}
