@@ -23,7 +23,6 @@ const carto = {
   SQL(query, type = 'json') {
     const cleanedQuery = query.replace('\n', '');
     const url = buildSqlUrl(cleanedQuery, type);
-    console.log(url);
     return fetch(url)
       .then((response) => {
         if (response.ok) {

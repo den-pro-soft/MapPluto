@@ -29,8 +29,6 @@ export default Controller.extend(Bookmarkable, {
           const [, [anchorName, boroName]] = specialPurposeCrosswalk
             .find(([dist]) => dist === item.sdname);
 
-            console.log("------Item-------");
-            console.log(item);
           return {
             id: item.cartodb_id,
             label: item.sdlbl.toUpperCase(),
