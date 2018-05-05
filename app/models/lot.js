@@ -495,14 +495,6 @@ const HealthInfoDes = {
   5: 'Staten Island',
 };
 
-const SchoolDistDes = {
-  1: 'Manhattan School Districts',
-  2: 'Bronx School District',
-  3: 'Brooklyn School District',
-  4: 'Queens School District',
-  5: 'Staten Island School DIstrict',
-};
-
 const AreaSourceDes = {
   0: 'Not Available',
   2: "Department of Finance's RPAD File",
@@ -671,18 +663,19 @@ export default Bookmarkable.extend(Geometric, {
   schooldist: DS.attr('string'),
   schooldistdes: computed('schooldist', function() {
     const sd = this.get('schooldist');
+    let result = ' School District';
     if ((sd >= 1 && sd <= 6) || sd === 10) {
-      return SchoolDistDes['1'];
+      result = HealthInfoDes['1'] + result;
     } else if (sd >= 7 && sd <= 12) {
-      return SchoolDistDes['2'];
+      result = HealthInfoDes['2'] + result;
     } else if ((sd >= 13 && sd <= 23) || sd === 32) {
-      return SchoolDistDes['3'];
+      result = HealthInfoDes['3'] + result;
     } else if (sd >= 24 && sd <= 30) {
-      return SchoolDistDes['4'];
+      result = HealthInfoDes['4'] + result;
     } else if (sd === 31) {
-      return SchoolDistDes['5'];
+      result = HealthInfoDes['5'] + result;
     }
-    return null;
+    return result;
   }),
   spdist1: DS.attr('string'),
   spdistdes1: computed('spdist1', function() {
