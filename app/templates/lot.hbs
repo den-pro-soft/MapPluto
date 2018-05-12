@@ -159,6 +159,9 @@
 
     <hr/>
 
+    {{scraped-part
+        lot=lot}}
+
     <h3 class="header-small lot-section-header">Location #1</h3>
 
     {{#if lot.block}}<div class="data-grid"><label class="data-label">Tax Block</label><span class="datum">{{lot.block}}</span></div>{{/if}}
@@ -186,6 +189,8 @@
         </span>
       </div>
     {{/if}}
+
+
 
     <h3 class="header-small lot-section-header">Owner</h3>
 
